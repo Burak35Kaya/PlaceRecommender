@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MÜDAVİM - Mekan Tavsiye Asistanı</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>🗺️ MÜDAVİM</h1>
+                <p class="tagline">Yapay Zeka Destekli Mekan Tavsiye Asistanı</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Location Input Section -->
+            <div class="location-section">
+                <div class="input-group">
+                    <label for="location">📍 Konumunuz</label>
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="Örn: Kadıköy, Moda"
+                        class="location-input"
+                    >
+                </div>
+            </div>
+
+            <!-- Chat Container -->
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Welcome Message -->
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            <p>👋 Merhaba! Ben MÜDAVİM, sizin kişisel mekan tavsiye asistanınızım.</p>
+                            <p>Önce yukarıdan konumunuzu girin, sonra size nasıl yardımcı olabileceğimi sorun!</p>
+                            <p><strong>Örnek sorular:</strong></p>
+                            <ul>
+                                <li>Arkadaşlarımla oturup kahve içebileceğimiz bir yer arıyoruz</li>
+                                <li>Bilgisayar ile çalışabileceğim sessiz kafe var mı?</li>
+                                <li>Kız arkadaşım ile özel bir akşam yemeği yemek istiyoruz</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Section -->
+                <div class="chat-input-section">
+                    <div class="input-group">
+                        <textarea
+                            id="userInput"
+                            placeholder="Mesajınızı yazın..."
+                            rows="1"
+                            class="chat-input"
+                        ></textarea>
+                        <button id="sendButton" class="send-button">
+                            <span class="send-icon">➤</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Developed by <a href="mailto:burak.k3574@gmail.com">Burak Kaya</a></p>
+            <p class="tech-stack">Powered by OpenAI GPT-3.5 & Google Places API</p>
+        </footer>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
